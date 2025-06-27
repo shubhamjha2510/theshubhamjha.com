@@ -92,7 +92,7 @@ export default function OpenSource() {
             }}
           >
             <Typography color="success" fontWeight="xl">
-              Open-source.
+              Built on logic, reinforced by design<br />
             </Typography>
             {mobile ? <br /> : " "}
             Join the{" "}
@@ -105,7 +105,7 @@ export default function OpenSource() {
                       color: "white",
                       animation: "flicker 5s infinite",
                       animationDelay: `${Math.random() * 2}s`,
-                      fontWeight: "300",
+                      fontWeight: "400",
                     }
                   : {
                       color: theme.palette.text.primary,
@@ -118,7 +118,7 @@ export default function OpenSource() {
             >
               {dark ? "dark side" : "bold side"}
             </Typography>{" "}
-            of the force.
+             of structure.
             <Default>
               <Avatar
                 color="success"
@@ -145,11 +145,12 @@ export default function OpenSource() {
           >
             <Typography textColor="text.primary">Collaboration</Typography> and{" "}
             <Typography textColor="text.primary">
-              community-maintained projects
+              shared effort
             </Typography>{" "}
-            lay the foundation upon which the digital world we live in is built.
+            lay the foundation of<br/> every strong structure.
             Any <Typography textColor="text.primary">contribution</Typography>,
-            no matter how small, is and will always be appreciated.
+            Whether it's a single beam or a full
+            blueprint, every contribution adds strength and every contribution is valued.
           </Typography>
         </Stack>
         <Parallax

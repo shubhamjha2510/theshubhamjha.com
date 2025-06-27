@@ -150,14 +150,10 @@ export default function Credits() {
           minWidth="min(100%, 15rem)"
         >
           {"Illustrations generated using "}
-          <ATypography href="https://www.bing.com/create">
-            Bing Image Creator
-          </ATypography>
-          {" and "}
           <ATypography href="https://openai.com/chatgpt/">ChatGPT</ATypography>
           {" powered by "}
-          <ATypography href="https://openai.com/product/dall-e-2/">
-            DALL·E
+          <ATypography href="https://openai.com/index/dall-e-3/">
+            DALL·E-3
           </ATypography>
           .
         </Typography>

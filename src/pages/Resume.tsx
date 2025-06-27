@@ -53,7 +53,7 @@ export function Languages() {
             </Avatar>
           }
         >
-          {`${language.name}${language.native ? " (native)" : ""}`}
+          {`${language.name}`}
         </Chip>
       ))}
     </Stack>
@@ -63,7 +63,7 @@ export function Languages() {
 export default function Resume() {
   const mobile = useMobileMode();
 
-  /** Parsed HTML content of the biography */
+  
   const parsedBiographyContent = useMemo(
     () =>
       (marked.parse(details.biography) as string)
@@ -105,7 +105,7 @@ export default function Resume() {
                 textColor="text.secondary"
                 marginBottom={0.5}
               >
-                Software Engineer
+                Structural Engineer
               </Typography>
               <Typography
                 component="div"

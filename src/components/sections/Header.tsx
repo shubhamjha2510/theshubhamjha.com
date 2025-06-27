@@ -10,9 +10,9 @@ import details from "@/assets/Details";
 import { useMobileMode } from "@/components/Responsive";
 
 export const visitors = [
-  "stranger",
-  "collaborator",
-  "developer",
+  "chief officer",
+  "engineer",
+  "designer",
   "human",
   "visitor",
   "friend",
@@ -141,7 +141,7 @@ export default function Header() {
               opacity: 0.8,
             }}
           >
-            Dynamic, interactive, and up-to-date
+            <b>Dynamic, interactive, and up-to-date</b>
           </Typography>
         </Stack>
       </Button>
@@ -165,7 +165,7 @@ export default function Header() {
           textAlign: mobile ? "center" : "left",
         }}
       >
-        The name&apos;s{" "}
+        My name is{" "}
         <ATypography
           textColor="primary.plainColor"
           href={details.contact.linkedin}
@@ -173,23 +173,20 @@ export default function Header() {
           {`${details.name.first} ${details.name.last}`}
         </ATypography>{" "}
         , but you can call me{" "}
-        <ATypography href={details.contact.github}>
+        <ATypography href={details.contact.linkedin}>
           {details.name.nickname}
         </ATypography>
         . I&apos;m a{" "}
-        <Typography textColor="text.primary">Software engineer</Typography>
-        &nbsp;
+        <Typography textColor="text.primary">Structural Engineer with a solid background in  </Typography>
         {currentCompany ? (
           <>
-            {"at "}
-            <ATypography textColor="text.primary" href={currentCompany.url}>
-              {currentCompany.company}
-            </ATypography>
-            &nbsp;
           </>
         ) : null}
-        and an <Typography textColor="text.primary">Open-source</Typography>{" "}
-        enthusiast.
+         <Typography textColor="text.primary">reinforced 
+          concrete (RCC) design</Typography>{" "}
+        focusing on structural analysis, detailing, and ensuring compliance with
+        relevant design codes and safety standards. 
+        And if you’re wondering how I made this website - yes, you guessed it right: I can code too.
       </Typography>
     </Stack>
   );

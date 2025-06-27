@@ -1,10 +1,7 @@
 import {
   Button,
-  IconButton,
   Stack,
-  Tooltip,
   Typography,
-  useColorScheme,
 } from "@mui/joy";
 import React, { useEffect, useMemo, useState } from "react";
 import { useLandScapeMode, useMobileMode } from "@/components/Responsive";
@@ -12,18 +9,16 @@ import { Link, useLocation } from "react-router-dom";
 import {
   BsHouse,
   BsHouseFill,
+  BsCloudLightningRain,
+  BsCloudLightningRainFill,
   BsJournalBookmark,
   BsJournalBookmarkFill,
-  BsMoon,
   BsFilePerson,
   BsFilePersonFill,
-  BsSun,
 } from "react-icons/bs";
-import { MdOutlineAutoMode } from "react-icons/md";
 import useOverlayQueryParam from "@/navigation/useOverlayQueryParam";
-import FloatingActionButton from "./FloatingActionButton";
 
-const modes = ["light", "dark", "system"] as const;
+const modes = ["light"] as const;
 
 function NavigationBarItem({
   icon,
@@ -137,7 +132,7 @@ export default function NavigationBar({
   children: JSX.Element | JSX.Element[];
 }) {
   const location = useLocation();
-  const { mode, setMode } = useColorScheme();
+ 
 
   const hidden = useOverlayQueryParam();
 
@@ -267,103 +262,16 @@ export default function NavigationBar({
             to="/resume"
             selected={location.pathname === "/resume"}
           />
+          <NavigationBarItem
+            icon={<BsCloudLightningRain />}
+            selectedIcon={<BsCloudLightningRainFill />}
+            text="Resources"
+            layout={horizontal ? "horizontal" : "vertical"}
+            to="/resources"
+            selected={location.pathname.startsWith("/resources")}
+          />
         </Stack>
-        {horizontal ? (
-          <Button
-            variant="plain"
-            color="neutral"
-            size="lg"
-            sx={{
-              minHeight: "fit-content",
-              borderRadius: "100vmax",
-              padding: ".6rem 1rem",
-              transition: "all 0.2s",
-              fontSize: "var(--joy-fontSize-sm)",
-            }}
-            onClick={() => {
-              if (mode)
-                setMode(modes[(modes.indexOf(mode) + 1) % modes.length]);
-            }}
-            startDecorator={
-              mode === "system" ? (
-                <MdOutlineAutoMode />
-              ) : mode === "light" ? (
-                <BsSun />
-              ) : (
-                <BsMoon />
-              )
-            }
-          >
-            {`${
-              mode === "system" ? "System" : mode === "light" ? "Light" : "Dark"
-            } theme`}
-          </Button>
-        ) : (
-          <Tooltip
-            variant="soft"
-            placement="right"
-            title={`${
-              mode === "system" ? "System" : mode === "light" ? "Light" : "Dark"
-            } theme`}
-          >
-            <IconButton
-              variant="plain"
-              color="neutral"
-              size="lg"
-              sx={{
-                transition: "all 0.2s",
-                display: bottom ? "none" : undefined,
-                borderRadius: "100vmax",
-                padding: 2,
-              }}
-              onClick={() => {
-                if (mode)
-                  setMode(modes[(modes.indexOf(mode) + 1) % modes.length]);
-              }}
-            >
-              {mode === "system" ? (
-                <MdOutlineAutoMode />
-              ) : mode === "light" ? (
-                <BsSun />
-              ) : (
-                <BsMoon />
-              )}
-            </IconButton>
-          </Tooltip>
-        )}
-      </Stack>
-      {bottom && !hidden && (
-        <Tooltip
-          variant="soft"
-          placement="left"
-          title={`${
-            mode === "system" ? "System" : mode === "light" ? "Light" : "Dark"
-          } theme`}
-        >
-          <FloatingActionButton
-            size="lg"
-            color="neutral"
-            variant="outlined"
-            onClick={() => {
-              if (mode)
-                setMode(modes[(modes.indexOf(mode) + 1) % modes.length]);
-            }}
-            sx={{
-              height: "58px",
-              width: "58px",
-              borderRadius: "1rem",
-            }}
-          >
-            {mode === "system" ? (
-              <MdOutlineAutoMode />
-            ) : mode === "light" ? (
-              <BsSun />
-            ) : (
-              <BsMoon />
-            )}
-          </FloatingActionButton>
-        </Tooltip>
-      )}
+        </Stack>
       {children}
     </>
   );

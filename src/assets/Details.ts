@@ -1,63 +1,77 @@
-import aauMin from "@/assets/icons/aau.min.webp";
-import aau from "@/assets/icons/aau.webp";
-import enseeihtMin from "@/assets/icons/enseeiht.min.webp";
-import enseeiht from "@/assets/icons/enseeiht.webp";
+import sseMin from "@/assets/icons/sse.min.webp";
+import sse from "@/assets/icons/sse.webp";
+import srmMin from "@/assets/icons/srm.min.webp";
+import srm from "@/assets/icons/srm.webp";
+import maha from "@/assets/icons/maha.webp";
+import mahaMin from "@/assets/icons/maha.min.webp";
 import escapeMin from "@/assets/icons/escape.min.webp";
 import escape from "@/assets/icons/escape.webp";
 import talentyouMin from "@/assets/icons/talentyou.min.webp";
 import talentyou from "@/assets/icons/talentyou.webp";
-import kanopMin from "@/assets/icons/kanop.min.webp";
-import kanop from "@/assets/icons/kanop.webp";
-import lfdcMin from "@/assets/icons/lfdc.min.webp";
-import lfdc from "@/assets/icons/lfdc.webp";
+import skanskaMin from "@/assets/icons/skanska.min.webp";
+import skanska from "@/assets/icons/skanska.webp";
+
 
 const details = {
   name: {
-    first: "Elliot",
-    last: "Négrel-Jerzy",
-    nickname: "BSoDium",
+    first: "Shubham",
+    last: "Jha",
+    nickname: "शुभ",
   },
-  title: "Software Engineer",
-  biography: "Skilled **full-stack developer** with expertise in diverse programming languages and frameworks. Proven ability to deliver impactful projects on GitHub, fostering a **collaborative environment**. Adept at tackling **complex challenges** and thriving in team settings. Seeking to leverage skills in a dynamic role.",
+  title: "Structural Engineer",
+  biography: "Skilled **Structural engineer** with expertise in the design and analysis of **reinforced concrete, steel, and composite structures.** Delivers safe, efficient, and innovative solutions across **residential, commercial, and infrastructure projects.** Adapt at solving complex structural challenges and collaborating with architects, contractors, and consultants. Strong grip on **manual structural design** and practical engineering methods.",
   education: [
     {
-      school: "ENSEEIHT",
-      url: "https://www.enseeiht.fr/en/index.html",
-      icon: enseeiht,
-      iconMin: enseeihtMin,
-      location: "Toulouse, France",
-      degree: "Master's degree in engineering",
-      major: "Computer Science and Applied Mathematics",
-      start: "Sep 2020",
-      end: "May 2023",
+      school: "SRM Institute of Science & Technology",
+      url: "https://www.srmist.edu.in/",
+      icon: srm,
+      iconMin: srmMin,
+      location: "Chennai, TamilNadu",
+      degree: "Master's degree in Civil Engineering",
+      major: "(GPA-9.43)",
+      start: "Jun 2023",
+      end: "May 2025",
     },
     {
-      school: "AAU Klagenfurt",
-      url: "https://www.aau.at/en/",
-      icon: aau,
-      iconMin: aauMin,
-      location: "Klagenfurt, Austria",
-      degree: "Master's degree in computer science",
-      major: "Computer Graphics and Vision",
-      start: "Sep 2022",
-      end: "Mar 2023",
+      school: "Saveetha School of Engineering",
+      url: "https://saveetha.ac.in/",
+      icon: sse,
+      iconMin: sseMin,
+      location: "Chennai, TamilNadu",
+      degree: "Bachelor's degree in Civil Engineering",
+      major: "(GPA-7.4)",
+      start: "Jun 2017",
+      end: "Aug 2021",
     },
     {
-      school: "CPGE Lycée Déodat de Séverac",
-      url: "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4052",
-      location: "Toulouse, France",
-      degree: "PTSI/PSI* (Bachelor equivalent)",
-      major: "Mathematics and Physics",
-      start: "Sep 2018",
-      end: "Jul 2020",
+      school: "Brijlal Biyani Science College",
+      url: "",
+      icon: maha,
+      iconMin: mahaMin,
+      location: "Amravati, Maharashtra",
+      degree: "Maharashtra State Board ",
+      major: "Higher Secondary Certificate - 12th",
+      start: "Apr 2015",
+      end: "Mar 2017",
+    },
+    {
+      school: "Takhatmal English High School",
+      url: "",
+      icon: maha,
+      iconMin: mahaMin,
+      location: "Amravati, Maharashtra",
+      degree: "Maharashtra State Board ",
+      major: "Secondary School Certificate - 10th",
+      start: "Mar 2014",
+      end: "Mar 2015",
     },
   ],
   experience: [
     {
-      company: "Kanop",
-      url: "https://www.kanop.io/",
-      icon: kanop,
-      iconMin: kanopMin,
+      company: "Skanska India Private Limited",
+      url: "",
+      icon: skanska,
+      iconMin: skanskaMin,
       location: "Barcelona, Spain",
       contract: "Full-time",
       position: "Front-end engineer",
@@ -106,78 +120,94 @@ const details = {
       skills: ["R&D", "UI/UX", "Svelte", "GraphQL", "NodeJS", "Figma"],
     },
     {
-      company: "Kanop",
-      url: "https://www.kanop.io/",
-      icon: kanop,
-      iconMin: kanopMin,
-      location: "Paris, France",
-      contract: "Freelance & Internship",
-      position: "Front-end engineer",
-      start: "Jun 2022",
-      end: "Sep 2023",
+      company: "Skanska India Private Limited",
+      url: "",
+      icon: skanska,
+      iconMin: skanskaMin,
+      location: "Mumbai, Maharashtra",
+      contract: "Internship",
+      position: "Site engineer",
+      start: "Jun 2021",
+      end: "Nov 2021",
       description: [
-        "Pioneered the design and deployment of cutting-edge web applications using React TypeScript, D3.js, and Mapbox GL for advanced mapping and chart visualizations.",
-        "Collaborated with data scientists and UX designers to create impactful and user-friendly visualizations and interfaces.",
-        "Led major website overhauls improving navigation, aesthetics, and SEO, while ensuring optimal functionality and user experience.",
+        "Structural analysis of commercial and residential buildings, ensuring compliance with safety regulations and project specifications.",
+        "Collaborated with architects and contractors to develop innovative solutions, which improved structural integrity while cutting costs by 10%.",
+        "Implemented advanced modeling software, which enhanced our team's efficiency and reduced design errors.",
+        "Conducted site inspections and assessments, ensuring that construction adhered to engineering standards, ultimately increasing client satisfaction.",
       ],
       skills: [
-        "React",
-        "Node JS",
-        "DevOps",
-        "Mapbox.gl",
-        "Material UI",
-        "Adobe XD",
+        "Site Inspections",
+        "Safety Compliance",
+        "RCC Design",
+        "Structural Analysis",
+        
       ],
-    },
-    {
-      company: "La Fresque du Climat",
-      url: "https://fresqueduclimat.org/",
-      icon: lfdc,
-      iconMin: lfdcMin,
-      location: "Toulouse, France",
-      contract: "Volunteering",
-      position: "Facilitator",
-      start: "Sept 2021",
-      end: "Jun 2022",
-      description:
-        "Facilitated workshops on climate change awareness in high schools and universities.",
-      skills: ["Public speaking", "Climate change awareness", "Teamwork"],
     },
   ],
   languages: [
     {
-      name: "French",
-      level: "C2",
-      native: true,
-    },
-    {
       name: "English",
-      level: "C1",
+      level: "C2",
     },
     {
-      name: "Spanish",
-      level: "C1",
+      name: "Hindi",
+      level: "C2",
     },
     {
-      name: "Polish",
-      level: "B2",
+      name: "Marathi",
+      level: "C2",
     },
     {
-      name: "German",
+      name: "Telugu",
       level: "B1",
+    },
+    {
+      name: "Tamil",
+      level: "A1",
     },
   ],
   contact: {
-    location: "Barcelona, España",
-    email: "contact@bsodium.fr",
-    phone: "+33 7 83 79 29 25",
-    website: "https://www.bsodium.fr",
-    linkedin: "https://www.linkedin.com/in/bsodium/",
-    github: "https://www.github.com/bsodium",
-    researchgate: "https://www.researchgate.net/profile/Elliot-Negrel-Jerzy",
-    gitlab: "https://www.gitlab.com/bsodium",
-    deviantart: "https://www.deviantart.com/bsodium",
+    location: "Amravati, Maharashtra",
+    email: "Hello@theshubhamjha.com",
+    phone: "+91 70385 21801",
+    website: "https://www.theshubhamjha.com",
+    linkedin: "https://www.linkedin.com/in/shubh2510/",
+    github: "",
+    researchgate: "https://www.researchgate.net/profile/Shubham-Jha-26",
+    gitlab: "",
+    deviantart: "",
   },
+  projects: [
+    {
+      name: "Fire Resistance Analysis of Hybrid Rebar RC Beams",
+      image: srm,
+      imageMin: srmMin,
+      duration: "Feb 2024 – May 2024",
+      description:
+        "This research-focused project analyzes the flexural behavior of RC beams reinforced with hybrid GFRP-steel rebars and fiber blends (steel & polypropylene). It simulates fire exposure conditions to assess structural performance under extreme temperature variations.",
+      tech: [
+        "ANSYS",
+        "ETABS",
+        "AutoCAD",
+        "MATLAB",
+        "Hybrid Rebar Design",
+        "Finite Element Analysis",
+      ],
+      link: "",
+    },
+    {
+      name: "Skanska India Private Limited",
+      image: skanska,
+      imageMin: skanskaMin,
+      duration: "Jun 2021 – Nov 2021",
+      description:
+        "Designed sustainable grasscrete-based pavement units aimed at reducing urban stress and enhancing psychological well-being. Integrated material testing and behavioral analysis under service conditions.",
+      tech: ["AutoCAD", "SketchUp", "Sustainable Design", "Grasscrete", "Research"],
+      link: "",
+    },
+  ],
 };
+
+
 
 export default details;

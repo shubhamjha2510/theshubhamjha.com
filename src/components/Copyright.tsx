@@ -1,4 +1,4 @@
-import { Card, Link, Typography } from "@mui/joy";
+import { Card } from "@mui/joy";
 import { animated } from "@react-spring/web";
 import useOverlayQueryParam from '@/navigation/useOverlayQueryParam';
 import { useMobileMode } from "@/components/Responsive";
@@ -43,26 +43,6 @@ export default function Copyright() {
         overflow: "auto",
       })}
     >
-      <Typography
-        level="body2"
-        sx={{
-          whiteSpace: "nowrap",
-        }}
-      >
-        Credit to{" "}
-        <Link href="https://github.com/BSoDium" target="_blank">
-          BSoDium
-        </Link>{" "}
-        for the{" "}
-        <Link href="https://www.bsodium.fr" target="_blank">
-          original design
-        </Link>{" "}
-        and{" "}
-        <Link href="https://github.com/BSoDium/bsodium.fr" target="_blank">
-          code
-        </Link>
-        .
-      </Typography>
     </Card>
   );
 }

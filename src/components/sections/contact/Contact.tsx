@@ -1,5 +1,5 @@
 import { Avatar, Stack, Typography } from "@mui/joy";
-import { FaDeviantart, FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa";
+import { FaFigma, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { SiResearchgate } from "react-icons/si";
 import details from "@/assets/Details";
@@ -111,15 +111,9 @@ export default function Contact() {
             color: "#E6EDF3",
           },
           {
-            url: details.contact.gitlab,
-            icon: <FaGitlab />,
-            title: "GitLab",
-            color: "#fc6d26",
-          },
-          {
             url: details.contact.deviantart,
-            icon: <FaDeviantart />,
-            title: "DeviantArt",
+            icon: <FaFigma />,
+            title: "Figma",
             color: "#00E59B",
           },
           {

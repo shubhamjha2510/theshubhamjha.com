@@ -12,18 +12,15 @@ import {
   Tabs,
   Tooltip,
   Typography,
-  useColorScheme,
 } from "@mui/joy";
 import React, { useEffect, useState } from "react";
-import {
-  VscChromeClose,
-  VscChromeMaximize,
-  VscChromeMinimize,
-  VscTerminalPowershell,
-} from "react-icons/vsc";
-
-import { IoAddOutline } from "react-icons/io5";
-import { HiChevronDown } from "react-icons/hi";
+import { TbBuildingFactory } from "react-icons/tb";
+import { SiTestinglibrary } from "react-icons/si";
+import { FaIndustry } from "react-icons/fa"
+import { MdEngineering } from "react-icons/md";
+import { GiConcreteBag } from "react-icons/gi";
+import { GiSuspensionBridge } from "react-icons/gi";
+import { FcEngineering } from "react-icons/fc";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { RiUserLine } from "react-icons/ri";
 import mockMessages from "@/utils/Messages";
@@ -80,8 +77,8 @@ export function FakeButton({
 export default function Terminal() {
   const [tabs] = useState<Tab[]>([
     {
-      name: `pwsh in ${details.name.nickname.toLowerCase()}`,
-      icon: <VscTerminalPowershell />,
+      name: `Don’t worry, I’ve got a degree`,
+      icon: <TbBuildingFactory />,
     },
   ]);
   const [displayed, setDisplayed] = useState<Category>(categories[0]);
@@ -91,9 +88,10 @@ export default function Terminal() {
   const [playing, setPlaying] = useState(true);
 
   const mobile = useMobileMode();
-  const { colorScheme } = useColorScheme();
    
-  const dark = colorScheme === "dark";
+  // const { colorScheme } = useColorScheme();
+   
+  const dark = false;
 
   useEffect(() => {
     setLoadingTime(Math.floor(Math.random() * 300));
@@ -207,9 +205,7 @@ export default function Terminal() {
                   marginTop: "1rem",
                 }
               : {
-                  backgroundColor: dark
-                    ? `color-mix(in srgb, ${theme.palette.background.body}, ${theme.palette.neutral.softBg} 40%)`
-                    : `color-mix(in srgb, ${theme.palette.background.level1}, transparent 70%)`,
+                  backgroundColor: `color-mix(in srgb, ${theme.palette.background.level1}, transparent 70%)`,
                   border: `1px solid ${theme.palette.neutral.outlinedBorder}`,
                   height: "550px",
                   boxShadow: "lg",
@@ -248,9 +244,7 @@ export default function Terminal() {
                         justifyContent: "space-between",
                         flexDirection: "row",
                         width: "250px",
-                        backgroundColor: dark
-                          ? theme.palette.background.level1
-                          : theme.palette.background.level2,
+                        backgroundColor: theme.palette.background.level2,
                         borderBottomRightRadius: 0,
                         borderBottomLeftRadius: 0,
                         boxShadow: "none",
@@ -316,7 +310,7 @@ export default function Terminal() {
                           marginRight: 0.5,
                         }}
                       >
-                        <VscChromeClose />
+                        <GiConcreteBag />
                       </FakeButton>
                     </Card>
                   ))}
@@ -335,7 +329,7 @@ export default function Terminal() {
                       minHeight: "25px",
                     }}
                   >
-                    <IoAddOutline />
+                    <FaIndustry />
                   </FakeButton>
                   <Divider orientation="vertical" />
                   <FakeButton
@@ -351,7 +345,7 @@ export default function Terminal() {
                       minHeight: "25px",
                     }}
                   >
-                    <HiChevronDown />
+                    <MdEngineering />
                   </FakeButton>
                 </Stack>
               </Stack>
@@ -367,7 +361,7 @@ export default function Terminal() {
                       paddingX: 2,
                     }}
                   >
-                    <VscChromeMinimize />
+                    <FcEngineering />
                   </FakeButton>
                   <FakeButton
                     tooltipIndex={tooltipIndex}
@@ -379,7 +373,7 @@ export default function Terminal() {
                       paddingX: 2,
                     }}
                   >
-                    <VscChromeMaximize />
+                    <GiSuspensionBridge />
                   </FakeButton>
                   <FakeButton
                     tooltipIndex={tooltipIndex}
@@ -395,7 +389,7 @@ export default function Terminal() {
                       },
                     })}
                   >
-                    <VscChromeClose />
+                    <SiTestinglibrary />
                   </FakeButton>
                 </Stack>
               </Default>
@@ -453,16 +447,15 @@ export default function Terminal() {
               component="span"
             >
               <Typography textColor="text.secondary">
-                Powershell 7.3.4
+                Daily Progress Report.....
                 <br />
-                Loading personal and system profiles took&nbsp;
+                Loading personal profile took&nbsp;
                 {loadingTime}
                 ms.
               </Typography>
               <br />
               <Typography color="primary">
-                root@
-                {details.name.nickname.toLowerCase()}
+                Engineer@Site
                 :~$&nbsp;
               </Typography>
               <TypeWriter
@@ -472,7 +465,7 @@ export default function Terminal() {
                 typeInterval={20}
                 sx={{}}
               >
-                {`${details.name.nickname.toLowerCase()}.exe ‑‑${displayed}`}
+                {`${details.name.nickname.toLowerCase()}.str ‑‑${displayed}`}
               </TypeWriter>
             </Typography>
             <Tabs
@@ -508,12 +501,8 @@ export default function Terminal() {
                         borderRadius: "6px",
                         ...(checked
                           ? {
-                              backgroundColor: dark
-                                ? theme.palette.neutral.solidColor
-                                : theme.palette.neutral.solidBg,
-                              color: dark
-                                ? theme.palette.neutral.solidBg
-                                : theme.palette.neutral.solidColor,
+                          backgroundColor: theme.palette.neutral.solidBg,
+                        color: theme.palette.neutral.solidColor,
                             }
                           : {}),
                       })}

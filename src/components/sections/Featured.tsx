@@ -13,7 +13,7 @@ import {
 } from "@mui/joy";
 import React, { useEffect, useState } from "react";
 import { BsJournalCode } from "react-icons/bs";
-import { FaCodeBranch, FaGithub, FaStar } from "react-icons/fa";
+import { FaCodeBranch, FaFigma, FaGithub, FaStar } from "react-icons/fa";
 import getProjects from "@/utils/Api";
 import { Parallax } from "react-scroll-parallax";
 import { FiArrowRight, FiCode, FiExternalLink } from "react-icons/fi";
@@ -178,7 +178,7 @@ export default function Featured() {
     setLoading(true);
     getProjects()
       .then((data) => {
-        setProjects(data?.filter((project) => project.platform === "github") || []);
+        setProjects(data?.filter((project) => project.platform === "figma") || []);
       })
       .catch(() => {
         setError(
@@ -253,8 +253,8 @@ export default function Featured() {
                   variant="soft"
                   color="info"
                   startDecorator={
-                    <Avatar alt="GitHub" color="info" variant="outlined">
-                      <FaGithub size="1rem" />
+                    <Avatar alt="Figma" color="info" variant="outlined">
+                      <FaFigma size="1rem" />
                     </Avatar>
                   }
                 >
@@ -369,7 +369,7 @@ export default function Featured() {
                   Loading projects
                 </Typography>
                 <Typography level="body2" textColor="info.300">
-                  Fetching the latest projects from GitHub, please wait.
+                  Fetching the latest projects from Figma, please wait.
                 </Typography>
               </Stack>
             </Stack>
@@ -422,8 +422,7 @@ export default function Featured() {
               textColor="text.secondary"
               textAlign={mobile ? "center" : "left"}
             >
-              Browse more projects in the dedicated explorer, a centralised hub
-              for all my work and experiments.
+              Dive deeper into my structural design journey - the explorer hosts all my calculations, models, and project insights.
             </Typography>
           </Stack>
           <Button

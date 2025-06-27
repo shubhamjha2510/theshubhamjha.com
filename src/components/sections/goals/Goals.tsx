@@ -68,21 +68,21 @@ function Comment({ step }: { step: number }) {
         opacity,
       }}
     >
-      <Avatar alt="Michael" color="primary" variant="solid" size="sm">
-        M
+      <Avatar alt="Nitin" color="primary" variant="solid" size="sm">
+        N
       </Avatar>
       <Stack>
         <Typography level="body3" textColor="text.secondary" fontWeight="600">
-          Michael
+          Nitin
           {" • "}
-          <Typography textColor="text.tertiary">5 minutes ago</Typography>
+          <Typography textColor="text.tertiary">10 minutes ago</Typography>
         </Typography>
         <Typography
           level="body2"
           textColor="text.secondary"
           sx={{ marginRight: "0.5rem" }}
         >
-          Let&apos;s add a text input under these!
+          How to calculate stiffness factor of column ?
         </Typography>
       </Stack>
     </Card>
@@ -273,7 +273,7 @@ function Board({ step }: { step: number }) {
           <Typography level="h3">
             <Typography textColor="text.tertiary">Design.</Typography>
             <br />
-            <Typography textColor="text.secondary">Develop.</Typography>
+            <Typography textColor="text.secondary">Build.</Typography>
             <br />
             <Typography>Deploy.</Typography>
             <br />
@@ -428,17 +428,17 @@ function Board({ step }: { step: number }) {
         }}
       >
         <Button variant="outlined" color="neutral">
-          Discover
+          Analyze
         </Button>
         <Button variant="soft" color="neutral" sx={{ whiteSpace: "nowrap" }}>
-          Get Started
+          Model
         </Button>
         <Button
           color="primary"
           startDecorator={<MdOutlineRocketLaunch />}
           sx={{ whiteSpace: "nowrap" }}
         >
-          Ship it
+          Design
         </Button>
         <Comment step={step} />
       </Card>
@@ -556,7 +556,7 @@ export default function Goals() {
             </Default>
           </Typography>
           <Typography level="body1" textColor="text.secondary">
-            Let&apos;s build products that people love.{" "}
+            Let&apos;s build structure that people love.{" "}
             <Typography textColor="text.primary" fontWeight="600">
               Together.
             </Typography>
