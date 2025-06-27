@@ -138,6 +138,19 @@ export default function Reach({ step }: { step: number }) {
             gap: 1,
           }}
         >
+          <Typography level="h3">
+            {"You can reach me via email"}</Typography>
+            <Typography level="h3" color="danger">
+  <a href="https://mail.google.com/mail/?view=cm&to=hello@theshubhamjha.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: "inherit", textDecoration: "none" }}
+  >
+    Hello@theshubhamjha.com
+  </a>
+          </Typography>
+          <Typography level="h2"sx={{ fontFamily: "'Lobster', cursive", fontStyle: "italic", letterSpacing: 1 }}> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;
+            {"(or)"}</Typography>
           <Typography level="h1">
             {"Let's "}
             <Typography color="danger">connect.</Typography>
@@ -187,7 +200,7 @@ export default function Reach({ step }: { step: number }) {
                 target="_blank"
                 startDecorator={<FaFire />}
               >
-                Surprise me
+                Hit me with it!
               </Button>
               <Button
                 type="submit"
@@ -248,7 +261,9 @@ export default function Reach({ step }: { step: number }) {
             })}
           </>
         </Default>
+        
       </Box>
+      
       <Stack
         direction={mobile ? "column" : "row"}
         gap={mobile ? 2 : 4}
@@ -270,6 +285,7 @@ export default function Reach({ step }: { step: number }) {
           ),
         }}
       >
+        
         <BsSendCheck
           size="4rem"
           style={{ color: "var(--joy-palette-neutral-softColor)" }}
@@ -287,6 +303,7 @@ export default function Reach({ step }: { step: number }) {
           </Typography>
         </Stack>
       </Stack>
+      
     </>
   );
 }

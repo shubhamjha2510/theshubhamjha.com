@@ -1,9 +1,9 @@
 {
-  "name": "bsodium.fr",
+  "name": "theshubhamjha.com",
   "version": "1.0.0",
   "license": "GPL-2.0-only",
-  "author": "BSoDium",
-  "url": "https://www.bsodium.fr",
+  "author": "Shubhamjha",
+  "url": "https://theshubhamjha.com",
   "type": "module",
   "scripts": {
     "dev": "vite",

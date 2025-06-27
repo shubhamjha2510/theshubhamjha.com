@@ -149,9 +149,9 @@ export default function Credits() {
           textColor={colorScheme === "dark" ? "#6c7b97" : "#3d4b58"}
           minWidth="min(100%, 15rem)"
         >
-          {"Illustrations generated using "}
-          <ATypography href="https://openai.com/chatgpt/">ChatGPT</ATypography>
-          {" powered by "}
+          {"Illustrations by Sensai Elliot "}
+          <ATypography href="" children={undefined}></ATypography>
+          {" Generated using "}
           <ATypography href="https://openai.com/index/dall-e-3/">
             DALL·E-3
           </ATypography>
