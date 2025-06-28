@@ -4,8 +4,11 @@ import {
   Typography,
 } from "@mui/joy";
 import React, { useEffect, useMemo, useState } from "react";
-import { useLandScapeMode, useMobileMode } from "@/components/Responsive";
-import { Link, useLocation } from "react-router-dom";
+import {
+  Link as RouterLink,
+  LinkProps as RouterLinkProps,
+  useLocation,
+} from "react-router-dom";
 import {
   BsHouse,
   BsHouseFill,
@@ -16,8 +19,14 @@ import {
   BsFilePerson,
   BsFilePersonFill,
 } from "react-icons/bs";
+import { useLandScapeMode, useMobileMode } from "@/components/Responsive";
 import useOverlayQueryParam from "@/navigation/useOverlayQueryParam";
 
+// ✅ Type-safe Link component for MUI's `component={}`
+const LinkComponent = React.forwardRef<HTMLAnchorElement, RouterLinkProps>(
+  (props, ref) => <RouterLink ref={ref} {...props} />
+);
+LinkComponent.displayName = "LinkComponent";
 
 function NavigationBarItem({
   icon,
@@ -35,9 +44,10 @@ function NavigationBarItem({
   selected?: boolean;
 }) {
   const mobile = useMobileMode();
+
   return layout === "vertical" ? (
     <Stack
-      component={Link}
+      component={LinkComponent}
       to={to}
       alignItems="center"
       gap={0.5}
@@ -88,7 +98,7 @@ function NavigationBarItem({
     </Stack>
   ) : (
     <Button
-      component={Link}
+      component={LinkComponent}
       to={to}
       color="neutral"
       variant={selected ? "solid" : "plain"}
@@ -131,20 +141,15 @@ export default function NavigationBar({
   children: JSX.Element | JSX.Element[];
 }) {
   const location = useLocation();
- 
-
   const hidden = useOverlayQueryParam();
-
   const bottom = useMobileMode();
   const landscape = useLandScapeMode();
   const horizontal = useMemo(() => !landscape && !bottom, [landscape, bottom]);
 
   const [width, setWidth] = useState<number>();
   const [height, setHeight] = useState<number>();
-
   const navigationRef = React.createRef<HTMLDivElement>();
 
-  // Resize observer
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
       entries.forEach((entry) => {
@@ -164,7 +169,6 @@ export default function NavigationBar({
     };
   }, [navigationRef]);
 
-  // Safe area insets
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--nav-safe-area-inset-top",
@@ -180,15 +184,9 @@ export default function NavigationBar({
     );
 
     return () => {
-      document.documentElement.style.removeProperty(
-        "--nav-safe-area-inset-top"
-      );
-      document.documentElement.style.removeProperty(
-        "--nav-safe-area-inset-bottom"
-      );
-      document.documentElement.style.removeProperty(
-        "--nav-safe-area-inset-left"
-      );
+      document.documentElement.style.removeProperty("--nav-safe-area-inset-top");
+      document.documentElement.style.removeProperty("--nav-safe-area-inset-bottom");
+      document.documentElement.style.removeProperty("--nav-safe-area-inset-left");
     };
   }, [landscape, bottom, width, height]);
 
@@ -270,7 +268,7 @@ export default function NavigationBar({
             selected={location.pathname.startsWith("/resources")}
           />
         </Stack>
-        </Stack>
+      </Stack>
       {children}
     </>
   );

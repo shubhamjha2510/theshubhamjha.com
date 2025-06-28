@@ -3,8 +3,18 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default [
-  { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
-  { languageOptions: { globals: globals.browser } },
+  {
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+    },
+  },
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -15,14 +25,7 @@ export default [
       "no-restricted-imports": [
         "error",
         {
-          patterns: [
-            {
-              regex: "(.*)/RawApi",
-              importNamePattern: "^use",
-              message:
-                "Please use the Api object at @/api/Api to access hooks.",
-            },
-          ],
+          patterns: ["*/RawApi"],
         },
       ],
     },
