@@ -185,10 +185,10 @@ export default function OpenSource() {
             style={{
               ...(mobile
                 ? {
-                    height: "350px",
+                    height: "auto",
                   }
                 : {
-                    height: "500px",
+                    height: "450px",
                   }),
               filter:
                 "drop-shadow(0 -20px 20px hsla(185, 74%, 41%, 0.299)) drop-shadow(0 20px 20px hsla(7, 57%, 51%, 0.364))",

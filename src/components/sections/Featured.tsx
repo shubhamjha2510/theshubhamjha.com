@@ -316,7 +316,7 @@ export default function Featured() {
                   variant="plain"
                   color="info"
                   component="a"
-                  href="https://stats.uptimerobot.com/y3hLa5ZEeK"
+                  href="https://stats.uptimerobot.com/djmNzTjhwM"
                   target="_blank"
                 >
                   Check API status

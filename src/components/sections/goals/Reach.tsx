@@ -139,7 +139,7 @@ export default function Reach({ step }: { step: number }) {
           }}
         >
           <Typography level="h3">
-            {"You can reach me via email"}</Typography>
+            {"You can reach me via Email"}</Typography>
             <Typography level="h3" color="danger">
   <a href="https://mail.google.com/mail/?view=cm&to=hello@theshubhamjha.com"
     target="_blank"

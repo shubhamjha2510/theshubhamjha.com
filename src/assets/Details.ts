@@ -168,7 +168,7 @@ const details = {
   ],
   contact: {
     location: "Amravati, Maharashtra",
-    email: "Hello@theshubhamjha.com",
+    email: "Shubhamjha2510@gmail.com",
     phone: "+91 70385 21801",
     website: "https://www.theshubhamjha.com",
     linkedin: "https://www.linkedin.com/in/shubh2510/",
