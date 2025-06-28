@@ -1,6 +1,7 @@
 {
   "name": "theshubhamjha.com",
   "version": "1.0.0",
+  "private": true,
   "license": "GPL-2.0-only",
   "author": "Shubhamjha",
   "url": "https://theshubhamjha.com",
@@ -56,5 +57,5 @@
     "vite": "^5.4.10",
     "vite-plugin-svgr": "^4.2.0"
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.9.2"
 }

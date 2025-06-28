@@ -18,7 +18,6 @@ import {
 } from "react-icons/bs";
 import useOverlayQueryParam from "@/navigation/useOverlayQueryParam";
 
-const modes = ["light"] as const;
 
 function NavigationBarItem({
   icon,
