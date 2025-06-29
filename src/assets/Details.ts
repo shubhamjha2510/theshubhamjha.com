@@ -4,12 +4,11 @@ import srmMin from "@/assets/icons/srm.min.webp";
 import srm from "@/assets/icons/srm.webp";
 import maha from "@/assets/icons/maha.webp";
 import mahaMin from "@/assets/icons/maha.min.webp";
-import escapeMin from "@/assets/icons/escape.min.webp";
-import escape from "@/assets/icons/escape.webp";
-import talentyouMin from "@/assets/icons/talentyou.min.webp";
-import talentyou from "@/assets/icons/talentyou.webp";
 import skanskaMin from "@/assets/icons/skanska.min.webp";
 import skanska from "@/assets/icons/skanska.webp";
+import insdag from "@/assets/icons/insdag.webp";
+import insdagMin from "@/assets/icons/insdag.webp";
+
 
 
 const details = {
@@ -20,7 +19,7 @@ const details = {
   },
   title: "Structural Engineer",
   biography: "Skilled **Structural engineer** with expertise in the design and analysis of **reinforced concrete, steel, and composite structures.** Delivers safe, efficient, and innovative solutions across **residential, commercial, and infrastructure projects.** Adapt at solving complex structural challenges and collaborating with architects, contractors, and consultants. Strong grip on **manual structural design** and practical engineering methods.",
-  education: [
+  Education: [
     {
       school: "SRM Institute of Science & Technology",
       url: "https://www.srmist.edu.in/",
@@ -66,59 +65,8 @@ const details = {
       end: "Mar 2015",
     },
   ],
-  experience: [
-    {
-      company: "Skanska India Private Limited",
-      url: "",
-      icon: skanska,
-      iconMin: skanskaMin,
-      location: "Barcelona, Spain",
-      contract: "Full-time",
-      position: "Front-end engineer",
-      start: "Feb 2025",
-      end: "Present",
-      description: "Implementing high-performance cartography and data visualization tools for the Kanop SaaS platform.",
-      skills: [
-        "React",
-        "GCP",
-        "Framer Motion",
-        "Gitlab CI/CD",
-        "Agentic AI UI/UX",
-      ],
-    },
-    {
-      company: "TalentYou.ai",
-      url: "https://talentyou.ai/",
-      icon: talentyou,
-      iconMin: talentyouMin,
-      location: "Barcelona, Spain",
-      contract: "Full-time",
-      position: "Full-stack engineer",
-      start: "Jul 2024",
-      end: "Feb 2025",
-      description: [
-        "Rewrote the entire front-end of the TalentYou platform using React, Redux, and i18n, greatly improving performance and user experience.",
-        "Containerized the back-end services using Docker and VS Code Dev Containers, reducing the onboarding time for new developers by up to 70%.",
-      ],
-      skills: ["React", "REST", "Docker", "Django", "Redux", "i18n"],
-    },
-    {
-      company: "Escape technologies",
-      url: "https://www.escape.tech/",
-      icon: escape,
-      iconMin: escapeMin,
-      location: "Paris, France",
-      contract: "Full-time",
-      position: "Full-stack engineer",
-      start: "Nov 2023",
-      end: "May 2024",
-      description: [
-        "Designed and built a Svelte component library based on the latest Material UI guidelines, greatly increasing development speed and design consistency.",
-        "Researched and implemented a contrast-aware palette generation algorithm which significantly improved aesthetics and accessibility.",
-        "Redesigned the company website to improve SEO and user experience, leading to a 30% increase in traffic and a 20% increase in conversion rate.",
-      ],
-      skills: ["R&D", "UI/UX", "Svelte", "GraphQL", "NodeJS", "Figma"],
-    },
+  Experience: [
+     //add expiriance here shubham
     {
       company: "Skanska India Private Limited",
       url: "",
@@ -144,6 +92,25 @@ const details = {
       ],
     },
   ],
+   Certification: [
+  {
+    company: "INSDAG",
+    url: "",
+    icon: insdag,
+    iconMin: insdagMin,
+    location: "Mumbai, Maharashtra",
+    contract: "Internship",
+    position: "Site Engineer",
+    pdf: "https://files.theshubhamjha.com/download.php?file=Insdag.pdf",
+    description: [
+      "Structural analysis of commercial and residential buildings, ensuring compliance with safety regulations and project specifications.",
+      "Collaborated with architects and contractors to develop innovative solutions, which improved structural integrity while cutting costs by 10%.",
+      "Implemented advanced modeling software, which enhanced our team's efficiency and reduced design errors.",
+      "Conducted site inspections and assessments, ensuring that construction adhered to engineering standards, ultimately increasing client satisfaction.",
+    ],
+    skills: ["Site Inspections", "Safety Compliance", "RCC Design", "Structural Analysis"],
+  },
+],
   languages: [
     {
       name: "English",

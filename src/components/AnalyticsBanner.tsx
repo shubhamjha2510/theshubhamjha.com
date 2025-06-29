@@ -56,13 +56,12 @@ export default function AnalyticsBanner() {
         <Stack gap={2}>
           <Stack gap={1}>
             <Typography level="body1" fontWeight="600">
-              Hey there mate 👋
+              And here... we... go.🦇
             </Typography>
             <Typography level="body2" textColor="text.primary">
-              I gather analytics to understand how you use this site and to
-              improve your experience. Adding this page to your ad blocker
-              whitelist would mean a lot. You won&apos;t see any ads, and your
-              data will still be kept private.
+              This website is completely ad-free and built with your privacy in 
+              mind. Everything you see here is focused on delivering a clean,
+               distraction-free experience so you can browse freely and comfortably.
             </Typography>
           </Stack>
 
@@ -94,7 +93,7 @@ export default function AnalyticsBanner() {
                 window.location.reload();
               }}
             >
-              I&apos;ve whitelisted this site
+              I&apos;am batman
             </Button>
           </Stack>
         </Stack>

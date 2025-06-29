@@ -11,6 +11,8 @@ import { IoSchoolOutline } from "react-icons/io5";
 import { SlWrench } from "react-icons/sl";
 import { TbCircleDashed } from "react-icons/tb";
 import { Category } from "@/components/sections/Terminal";
+import { Button } from '@mui/joy';
+
 
 export const skillIcons: {
   [key: string]: React.ReactNode;
@@ -30,7 +32,7 @@ export function Education({ wrap }: { wrap?: boolean } = { wrap: false }) {
       gap={2}
       p={1}
     >
-      {details.education.map((item) => (
+      {details.Education.map((item) => (
         <Stack
           direction="row"
           gap={1.5}
@@ -108,8 +110,8 @@ export function Education({ wrap }: { wrap?: boolean } = { wrap: false }) {
 export function Experience({ truncate = false }: { truncate?: boolean }) {
   return (
     <Stack gap={2} p={1}>
-      {details.experience
-        .slice(0, truncate ? 4 : details.experience.length)
+      {details.Experience
+        .slice(0, truncate ? 4 : details.Experience.length)
         .reduce((acc, item) => {
           const lastItem = acc[acc.length - 1];
           if (
@@ -121,9 +123,9 @@ export function Experience({ truncate = false }: { truncate?: boolean }) {
             return acc;
           }
           return [...acc, [item]];
-        }, [] as (typeof details.experience)[number][][])
+        }, [] as (typeof details.Experience)[number][][])
         .map((items, index) => {
-          const isLast = index === details.experience.length - 1;
+          const isLast = index === details.Experience.length - 1;
           return (
             <Stack
               direction="row"
@@ -324,6 +326,189 @@ export function Experience({ truncate = false }: { truncate?: boolean }) {
     </Stack>
   );
 }
+export function Certification({ truncate = false }: { truncate?: boolean }) {
+  return (
+    <Stack gap={2} p={1}>
+      {details.Certification
+        .slice(0, truncate ? 4 : details.Certification.length)
+        .reduce((acc, item) => {
+          const lastItem = acc[acc.length - 1];
+          if (
+            lastItem &&
+            lastItem.length &&
+            lastItem[0].company === item.company
+          ) {
+            lastItem.push(item);
+            return acc;
+          }
+          return [...acc, [item]];
+        }, [] as (typeof details.Certification)[number][][])
+        .map((items, index) => {
+          const isLast = index === details.Certification.length - 1;
+          return (
+            <Stack
+              direction="row"
+              gap={1.5}
+              key={`${items[0].company}-${Math.random()}}`}
+            >
+              <Avatar
+                color="neutral"
+                variant="soft"
+                size="lg"
+                sx={(theme) => ({
+                  borderRadius: theme.getCssVar("radius-md"),
+                  border: `1px solid ${theme.getCssVar("palette-divider")}`,
+                })}
+              >
+                {items[0].icon ? (
+                  <ProgressiveImage
+                    src={items[0].icon}
+                    placeholder={items[0].iconMin}
+                    alt={items[0].company}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                ) : (
+                  <GoOrganization />
+                )}
+              </Avatar>
+              <Stack
+                gap={2}
+                sx={(theme) => ({
+                  position: "relative",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    width: "1px",
+                    height: "calc(100% - 3rem - 12px)",
+                    background: isLast
+                      ? `linear-gradient(to bottom, ${theme.palette.divider}, transparent)`
+                      : theme.palette.divider,
+                    left: "calc(-1.5rem - 12px)",
+                    top: "calc(3rem + 12px)",
+                  },
+                })}
+              >
+                {items.map((item, subIndex) => (
+                  <Stack
+                    key={`${item.company}-${item.position}-${subIndex}`}
+                    gap={0.75}
+                  >
+                    <Stack gap={0.25}>
+                      <Typography
+                        level="body1"
+                        display="flex"
+                        alignItems="baseline"
+                        flexWrap="wrap"
+                        columnGap={1}
+                        rowGap={0.3}
+                      >
+                        {subIndex === 0 &&
+                          (item.url ? (
+                            <Typography
+                              component="a"
+                              href={item.url}
+                              textColor="inherit"
+                              target="_blank"
+                              sx={{
+                                textDecoration: "none",
+                                "&:hover": {
+                                  textDecoration: "underline",
+                                },
+                              }}
+                            >
+                              {item.company}
+                            </Typography>
+                          ) : (
+                            item.company
+                          ))}
+                      </Typography>
+                      <Typography
+                        level="body2"
+                        display="flex"
+                        alignItems="baseline"
+                        flexWrap="wrap"
+                        columnGap={1}
+                        rowGap={0.3}
+                      >
+                        <Typography fontWeight="lg" textColor="text.primary">
+                          {item.position}
+                        </Typography>
+                        <Typography
+                          level="body2"
+                          component="span"
+                          textColor="text.secondary"
+                        >
+                          {item.contract} - {item.location}
+                        </Typography>
+                      </Typography>
+                    </Stack>
+                    <Stack gap={0.25}>
+                      <Stack
+                        direction="row"
+                        alignItems="start"
+                        flexWrap="wrap"
+                        gap={1}
+                        paddingY={0.5}
+                      >
+                        {item.skills.map((skill) => (
+                          <Chip
+                            variant="outlined"
+                            color="neutral"
+                            size="sm"
+                            key={skill}
+                            sx={(theme) => ({
+                              borderColor: theme.palette.divider,
+                            })}
+                          >
+                            {skill}
+                          </Chip>
+                        ))}
+                      </Stack>
+                      <Typography
+                        level="body3"
+                        textColor="text.tertiary"
+                        component="div"
+                      >
+                        {typeof item.description === "string"
+                          ? item.description
+                          : null}
+                        {typeof item.description === "object" ? (
+                          <Stack>
+                            {item.description.map((chunk) => (
+                              <Typography key={chunk}>- {chunk}</Typography>
+                            ))}
+                          </Stack>
+                        ) : null}
+                      </Typography>
+                      {item.pdf && (
+                        <Button
+                          component="a"
+                          href={item.pdf}
+                          download
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="soft"
+                          color="primary"
+                          size="sm"
+                          sx={{ width: "fit-content", mt: 1 }}
+                        >
+                          Download Certificate PDF
+                        </Button>
+                      )}
+                    </Stack>
+                  </Stack>
+                ))}
+              </Stack>
+            </Stack>
+          );
+        })}
+    </Stack>
+  );
+}
+
 
 export default function Details({ category }: { category: Category }) {
   const transRef = useSpringRef();
@@ -348,13 +533,19 @@ export default function Details({ category }: { category: Category }) {
     <Stack direction="column" ref={container}>
       {transition((style, item) => {
         switch (item) {
-          case "education":
+          case "Education":
             return (
               <animated.div style={style}>
                 <Education />
               </animated.div>
             );
-          case "experience":
+            case "Certification":
+            return (
+              <animated.div style={style}>
+                <Certification />
+              </animated.div>
+            );
+          case "Experience":
             return (
               <animated.div style={style}>
                 <Experience />

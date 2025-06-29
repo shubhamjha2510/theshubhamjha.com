@@ -167,7 +167,7 @@ export default function NoMatch() {
           >
             <Button
               component={Link}
-              to="https://github.com/BSoDium/bsodium.fr/issues/new?assignees=BSoDium&labels=bug&projects=&template=bug_report.md"
+              to="https://mail.google.com/mail/?view=cm&to=hello@theshubhamjha.com"
               target="_blank"
               size="lg"
               variant="outlined"
@@ -179,7 +179,7 @@ export default function NoMatch() {
             >
               File a bug report
             </Button>
-            <Tooltip title="🎸 Country roads 🎙️" variant="soft">
+            <Tooltip title="Home isn’t where you’re from, it’s where you find light when all goes dark. ✨" variant="soft">
               <Button
                 component={Link}
                 to="/"

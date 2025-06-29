@@ -31,7 +31,7 @@ export default function Header() {
 
   const currentCompany = useMemo(
     () =>
-      details.experience.find((experience) => experience.end === "Present") ||
+      details.Experience.find((Experience) => Experience.end === "Present") ||
       undefined,
     []
   );

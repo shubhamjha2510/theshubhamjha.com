@@ -42,6 +42,7 @@ export const architecture: RouteObject[] = [
         },
         path: "projects",
       },
+     
     ],
   },
   {
