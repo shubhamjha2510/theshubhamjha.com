@@ -111,7 +111,7 @@ export default function Contact() {
             color: "#E6EDF3",
           },
           {
-            url: details.contact.deviantart,
+            url: details.contact.RCC,
             icon: <FaFigma />,
             title: "Figma",
             color: "#00E59B",

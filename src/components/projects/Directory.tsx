@@ -89,17 +89,19 @@ function ProjectCard({
 
   const mobile = useMobileMode();
 
-  const footer = useMemo(
-    () =>
-      `published to ${platformDetails[project.platform].label}${
-        project.createdAt ? ` ${moment(project.createdAt).fromNow()}` : ""
-      }${
-        project.updatedAt
-          ? `, updated ${moment(project.updatedAt).fromNow()}`
-          : ""
-      }`,
-    [project]
-  );
+  const footer = useMemo(() => {
+  const platform = platformDetails[project.platform];
+  const platformLabel = platform?.label || project.platform || "Unknown";
+
+  return `published to ${platformLabel}${
+    project.createdAt ? ` ${moment(project.createdAt).fromNow()}` : ""
+  }${
+    project.updatedAt
+      ? `, updated ${moment(project.updatedAt).fromNow()}`
+      : ""
+  }`;
+}, [project]);
+
 
   return (
     <Stack
@@ -160,14 +162,18 @@ function ProjectCard({
     >
       <Stack direction={mobile ? "row" : "column"} gap={mobile ? 2 : 1}>
         <Avatar
-          component="span"
-          className="icon"
-          variant="plain"
-          size="md"
-          sx={{ borderRadius: ".5rem", transition: "all ease .2s", zIndex: 1 }}
-        >
-          {platformDetails[project.platform].icon({ size: "1.3rem" })}
-        </Avatar>
+  component="span"
+  className="icon"
+  variant="plain"
+  size="md"
+  sx={{ borderRadius: ".5rem", transition: "all ease .2s", zIndex: 1 }}
+>
+  {platformDetails[project.platform]
+    ? platformDetails[project.platform].icon({ size: "1.3rem" })
+    : project.platform?.[0]?.toUpperCase() || "?"}
+</Avatar>
+
+
         <Stack
           component="div"
           className={`interactions${open ? " open" : ""}`}
@@ -229,8 +235,9 @@ function ProjectCard({
         <Typography level="h3" alignItems="baseline">
           {project.title}
           <Typography textColor="text.tertiary" fontWeight="300" marginLeft={1}>
-            {platformDetails[project.platform].sublabel.toLocaleLowerCase()}
-          </Typography>
+  {platformDetails[project.platform]?.sublabel?.toLocaleLowerCase() ?? ""}
+</Typography>
+
         </Typography>
         <Typography
           level="body2"
@@ -571,7 +578,7 @@ export default function Directory() {
               details && (
                 <Stack direction="row" gap={1} alignItems="center">
                   <details.icon />
-                  {option.label}
+                  {details.label}
                 </Stack>
               )
             );
@@ -579,9 +586,9 @@ export default function Directory() {
         >
           {Object.entries(platformDetails).map(([key, item]) => {
             const selected = platform === key;
-            const occurrences = filteredProjects.filter(
-              (project) => project.platform === key
-            ).length;
+            const occurrences = projects.filter(
+  (project) => project.platform === key
+).length;
             return (
               <Option
                 key={key}

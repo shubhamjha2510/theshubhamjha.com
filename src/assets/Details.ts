@@ -142,7 +142,7 @@ const details = {
     github: "",
     researchgate: "https://www.researchgate.net/profile/Shubham-Jha-26",
     gitlab: "",
-    deviantart: "",
+    RCC: "",
   },
   projects: [
     {

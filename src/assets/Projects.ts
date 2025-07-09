@@ -1,39 +1,50 @@
 import { IconType } from 'react-icons';
-import {
-  FaCodeBranch, FaCommentAlt, FaHeart, FaStar,
-} from 'react-icons/fa';
-import {
-  FiFigma, FiGithub,
-} from 'react-icons/fi';
-import { SiResearchgate } from 'react-icons/si';
-import { TbBrandDeviantart } from 'react-icons/tb';
+import {FaCodeBranch, FaCommentAlt, FaHeart, FaStar,} from 'react-icons/fa';
 
-export const platforms = ['github', 'figma', 'deviantart', 'researchgate'] as const;
+import { FaBuilding } from 'react-icons/fa';
+import { GiFlatHammer } from 'react-icons/gi';
+import { GiSuspensionBridge} from 'react-icons/gi';
+import { FaLayerGroup} from 'react-icons/fa';
+import { GiUndergroundCave } from 'react-icons/gi';
+import { GiEarthCrack } from 'react-icons/gi';
+
+export const platforms = ['steel', 'bridge', 'rcc', 'composite', 'seismic', 'tunnel'] as const;
 export type Platform = (typeof platforms)[number]
 
 export const platformDetails: Record<Platform, {
   label: string,
   sublabel: string,
   icon: IconType }> = {
-    github: {
-      label: 'GitHub',
-      icon: FiGithub,
-      sublabel: 'Code repository',
+    rcc: {
+      label: 'RCC',
+      icon: FaBuilding,
+      sublabel: '(Reinforced Concrete)',
     },
-    figma: {
-      label: 'Figma',
-      icon: FiFigma,
-      sublabel: 'Design prototype',
+    steel: {
+      label: 'Steel',
+      icon: GiFlatHammer,
+      sublabel: '(Steel Structures)',
     },
-    deviantart: {
-      label: 'DeviantArt',
-      icon: TbBrandDeviantart,
-      sublabel: 'Artwork',
+    bridge: {
+      label: 'Bridges',
+      icon: GiSuspensionBridge,
+      sublabel: '(Bridge Design)',
     },
-    researchgate: {
-      label: 'ResearchGate',
-      sublabel: 'Research paper',
-      icon: SiResearchgate,
+    
+    composite: {
+      label: 'Composite',
+      sublabel: '(Composite Structures)',
+      icon: FaLayerGroup,
+    },
+    tunnel: {
+      label: 'Tunnel and Underground',
+      sublabel: '(Underground Structures)',
+      icon: GiUndergroundCave,
+    },
+    seismic: {
+      label: 'Seismic',
+      sublabel: '(Seismic Design)',
+      icon: GiEarthCrack,
     },
   };
 

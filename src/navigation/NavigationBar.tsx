@@ -264,7 +264,7 @@ export default function NavigationBar({
             selectedIcon={<BsCloudLightningRainFill />}
             text="Resources"
             layout={horizontal ? "horizontal" : "vertical"}
-            to="/resources"
+            to="https://rec.theshubhamjha.com"
             selected={location.pathname.startsWith("/resources")}
           />
         </Stack>

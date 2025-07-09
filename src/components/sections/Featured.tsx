@@ -13,11 +13,11 @@ import {
 } from "@mui/joy";
 import React, { useEffect, useState } from "react";
 import { BsJournalCode } from "react-icons/bs";
-import { FaCodeBranch, FaFigma, FaGithub, FaStar } from "react-icons/fa";
+import { FaBuilding } from "react-icons/fa";
+import { GiSuspensionBridge} from 'react-icons/gi';
 import getProjects from "@/utils/Api";
 import { Parallax } from "react-scroll-parallax";
-import { FiArrowRight, FiCode, FiExternalLink } from "react-icons/fi";
-import { RiBracesLine } from "react-icons/ri";
+import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 import { Project, rank } from "@/assets/Projects";
 import { Link } from "react-router-dom";
 import { MdErrorOutline } from "react-icons/md";
@@ -108,15 +108,13 @@ function ProjectCard({
               borderRadius: "calc(var(--Card-radius) / 1.5)",
             }}
           >
-            <FiCode />
+            <FaBuilding />
           </Avatar>
           <Typography level="h5" textColor="inherit">
             {beautify(project.title)}
           </Typography>
         </Stack>
-        <Typography level="body3" color="neutral" startDecorator={<FiCode />}>
-          {project.language}
-        </Typography>
+       
         <Typography
           level="body2"
           sx={{
@@ -126,43 +124,21 @@ function ProjectCard({
           {project.description}
         </Typography>
       </Stack>
-      <Stack direction="row" gap={2} justifyContent="space-between">
-        <Stack direction="row" gap={2}>
-          <Typography level="body2" startDecorator={<FaStar />}>
-            {project.interactions?.stars}
-          </Typography>
-          <Typography level="body2" startDecorator={<FaCodeBranch />}>
-            {project.interactions?.forks}
-          </Typography>
-        </Stack>
+      
         <Stack direction="row" gap={1}>
           <Button
-            variant="plain"
             component="a"
-            color={color}
-            href={project.source}
-            target="_blank"
-            sx={{
-              flexShrink: 0,
-            }}
-            startDecorator={<RiBracesLine />}
-          >
-            Code
-          </Button>
-          {project.demo && (
-            <Button
-              component="a"
               color={color}
               variant="solid"
-              href={project.demo}
-              target="_blank"
-              startDecorator={<FiExternalLink />}
+            href={project.source}
+            target="_blank"
+            startDecorator={<FiExternalLink />}
             >
-              Website
+              Show Project
             </Button>
-          )}
+    
         </Stack>
-      </Stack>
+      
     </Card>
   );
 }
@@ -178,7 +154,11 @@ export default function Featured() {
     setLoading(true);
     getProjects()
       .then((data) => {
-        setProjects(data?.filter((project) => project.platform === "figma") || []);
+        setProjects(
+          data?.filter(
+            (project) => [ "rcc",].includes(project.platform)
+          ) || []
+        );
       })
       .catch(() => {
         setError(
@@ -253,13 +233,13 @@ export default function Featured() {
                   variant="soft"
                   color="info"
                   startDecorator={
-                    <Avatar alt="Figma" color="info" variant="outlined">
-                      <FaFigma size="1rem" />
+                    <Avatar alt="Bridges" color="info" variant="outlined">
+                      <GiSuspensionBridge size="1rem" />
                     </Avatar>
                   }
                 >
-                  {`${projects.length > 0 ? projects.length : "No"} repositor${
-                    projects.length === 1 ? "y" : "ies"
+                  {`${projects.length > 0 ? projects.length : "No"} Design & Analysis${
+                    projects.length === 1 ? "" : ""
                   }`}
                 </Chip>
               </Default>
@@ -273,12 +253,12 @@ export default function Featured() {
             variant="soft"
             color="info"
             startDecorator={
-              <Avatar alt="GitHub" color="info" variant="outlined">
-                <FaGithub size="1rem" />
+              <Avatar alt="RCC" color="info" variant="outlined">
+                <FaBuilding size="1rem" />
               </Avatar>
             }
           >
-            {projects.length} repositories
+            {projects.length} Design & Analysis
           </Chip>
         </Mobile>
       </Stack>
