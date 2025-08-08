@@ -12,8 +12,6 @@ import {
 import {
   BsHouse,
   BsHouseFill,
-  BsCloudLightningRain,
-  BsCloudLightningRainFill,
   BsJournalBookmark,
   BsJournalBookmarkFill,
   BsFilePerson,
@@ -259,14 +257,7 @@ export default function NavigationBar({
             to="/resume"
             selected={location.pathname === "/resume"}
           />
-          <NavigationBarItem
-            icon={<BsCloudLightningRain />}
-            selectedIcon={<BsCloudLightningRainFill />}
-            text="Resources"
-            layout={horizontal ? "horizontal" : "vertical"}
-            to="https://rec.theshubhamjha.com"
-            selected={location.pathname.startsWith("/resources")}
-          />
+          
         </Stack>
       </Stack>
       {children}
