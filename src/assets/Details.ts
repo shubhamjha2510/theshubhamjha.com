@@ -67,6 +67,37 @@ const details = {
   ],
   Experience: [
      //add expiriance here shubham
+{
+      company: "PowerMech Projects Ltd",
+      url: "https://www.powermechprojects.com/",
+      icon: powerMech,
+      iconMin: powerMechMin,
+      location: "Adani 2x800MW Mirzapur Ultra Supercritical Thermal Power Project (METUPPL), India",
+      contract: "Full-time",
+      position: "Engineer",
+      start: "Oct 2025",
+      end: "Present",
+      description: [
+        "Executed civil construction activities for Boiler Unit-1 and Boiler Unit-2, including foundations, pedestals, and associated structures.",
+        "Successfully completed installation and alignment of high-tolerance anchor bolts for all critical equipment foundations for Boiler Units 1 & 2, including the main boiler duct foundations, pipe racks, and mill foundations, while maintaining specified tolerances and survey requirements.",
+        "Delivered (TG) Raft Foundations for Unit-1 and Unit-2, including reinforcement, concreting, and level control.",
+        "Executed civil works for (ESP Unit-1 and ESP Unit-2) foundations and supporting structures.",
+        "Performed area grading, site development, and earthwork activities across major plant areas.",
+        "Executed civil works for FD Fan, ID Fan, PA Fan, and auxiliary fan system foundations.",
+        "Coordinating with multidisciplinary teams, including mechanical and electrical engineers, to ensure seamless integration of civil structures with equipment.",
+        "Overseeing the daily progress of civil works at the power plant site, ensuring adherence to design specifications, quality standards, and safety protocols, handling client interface, and managing RA billing.",
+      ],
+      skills: [
+        "Civil Construction",
+        "Level Control",
+        "Power Plant Operations",
+        "Client Interface",
+        "RA Billing",
+        "Project Management",
+        "Safety Compliance",
+        "Quality Control"
+      ]
+    },
     {
       company: "Skanska India Private Limited",
       url: "",
@@ -136,7 +167,7 @@ const details = {
   contact: {
     location: "Amravati, Maharashtra",
     email: "Shubhamjha2510@gmail.com",
-    phone: "+91 70385 21801",
+    phone: "+91 7080521801",
     website: "https://www.theshubhamjha.com",
     linkedin: "https://www.linkedin.com/in/shubh2510/",
     github: "",
