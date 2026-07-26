@@ -8,7 +8,8 @@ import skanskaMin from "@/assets/icons/skanska.min.webp";
 import skanska from "@/assets/icons/skanska.webp";
 import insdag from "@/assets/icons/insdag.webp";
 import insdagMin from "@/assets/icons/insdag.webp";
-
+import powerMechMin from "@/assets/icons/pm.min.webp";
+import powerMech from "@/assets/icons/pm.webp";
 
 
 const details = {
